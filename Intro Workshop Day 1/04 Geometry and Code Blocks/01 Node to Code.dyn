@@ -1,0 +1,32 @@
+<Workspace Version="0.8.1.1942" X="-2263.52870350568" Y="-500.343702170813" zoom="1.08684429384093" Name="Home" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Vector" resolvedName="Autodesk.DesignScript.Geometry.Vector" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Cylinder" resolvedName="Autodesk.DesignScript.Geometry.Cylinder" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Vector" resolvedName="Autodesk.DesignScript.Geometry.Vector" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Vector" resolvedName="Autodesk.DesignScript.Geometry.Vector" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Cylinder" resolvedName="Autodesk.DesignScript.Geometry.Cylinder" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Cylinder" resolvedName="Autodesk.DesignScript.Geometry.Cylinder" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <DSCoreNodesUI.Input.DoubleSlider guid="7f7418c2-598d-4957-981b-aea1761ccc03" type="DSCoreNodesUI.Input.DoubleSlider" nickname="Number Slider" x="2123.79216543689" y="743.780039658751" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Double>28.67</System.Double>
+      <Range min="-10" max="60" step="0.1" />
+    </DSCoreNodesUI.Input.DoubleSlider>
+    <DSCoreNodesUI.Input.DoubleSlider guid="84fb372a-fa22-4d3b-8888-e794becddcc2" type="DSCoreNodesUI.Input.DoubleSlider" nickname="Number Slider" x="2122.6311237588" y="817.197584438461" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Double>11.501</System.Double>
+      <Range min="-10" max="60" step="0.1" />
+    </DSCoreNodesUI.Input.DoubleSlider>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="57a0ffd8-194e-4cf4-8cc8-ba64fd4ba47d" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="2497.62838646453" y="779.04110106361" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="srs = 1..50..5;&#xA;grid = Flatten(Autodesk.Point.ByCoordinates(srs&lt;1&gt;,srs&lt;2&gt;,0));&#xA;&#xA;attractor = Autodesk.Point.ByCoordinates(x,y,0);&#xA;&#xA;dist = attractor.DistanceTo(grid);&#xA;&#xA;topPt = grid.Add(Autodesk.Vector.ByCoordinates(0,0,dist/2));&#xA;&#xA;Autodesk.Cylinder.ByPointsRadius(grid,topPt,dist/15);" ShouldFocus="false" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="7f7418c2-598d-4957-981b-aea1761ccc03" start_index="0" end="57a0ffd8-194e-4cf4-8cc8-ba64fd4ba47d" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="84fb372a-fa22-4d3b-8888-e794becddcc2" start_index="0" end="57a0ffd8-194e-4cf4-8cc8-ba64fd4ba47d" end_index="1" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Models.NoteModel guid="9eb9b071-e807-43f7-89b8-fb5015e108dc" text="New Note" x="2536.33939921673" y="-1739.23475595505" />
+    <Dynamo.Models.NoteModel guid="552edd9e-b51c-4baf-90cc-55f623d4222a" text="ATTRACTOR POINT&#xD;&#xA;Scripting 101.&#xD;&#xA;&#xD;&#xA;An attractor point is a quick way to make variation across a field of objects.  It works by creating a grid of objects that have some parameter determined by the distance between the object and a point that moves around.&#xD;&#xA;&#xD;&#xA;To visualize what's going on, move the two sliders that control the location of the attractor point." x="2119.85078232844" y="522.446952190065" />
+  </Notes>
+  <Annotations />
+</Workspace>

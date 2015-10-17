@@ -1,0 +1,147 @@
+<Workspace Version="0.8.1.1942" X="-1473.31045433147" Y="-813.716006546868" zoom="0.56476562742098" Name="Home" RunType="Manual" RunPeriod="100" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Line" resolvedName="Autodesk.DesignScript.Geometry.Line" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="6375878c-a49b-4b6d-baac-6cc40eb54b1d" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="509.019953215984" y="1561.01301614876" isVisible="false" isUpstreamVisible="true" lacing="Disabled" CodeText="// Bottom curve&#xA;pts = {Point.ByCoordinates(0,0,0),&#xA;Point.ByCoordinates(7,2,0),&#xA;Point.ByCoordinates(20,-2,0)};&#xA;&#xA;bottom = NurbsCurve.ByPoints(pts);&#xA;&#xA;// Top curve&#xA;top = Line.ByStartPointEndPoint(&#xA;Point.ByCoordinates(0,0,12),&#xA;Point.ByCoordinates(20,0,12));&#xA;&#xA;// Surface&#xA;Surface.ByLoft({bottom,top});" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="13fe5414-d102-477b-bbc4-005092b8223a" type="Dynamo.Nodes.DSFunction" nickname="Image.ReadFromFile" x="1064.69422391834" y="1104.76725935824" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.IO.Image.ReadFromFile@var" />
+    <DSCore.File.Filename guid="75c2b625-794c-4627-b7a8-55551552392b" type="DSCore.File.Filename" nickname="File Path" x="504.901114522688" y="1104.30812306442" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.String>C:\Users\mccronc\Desktop\Workshop\04 Geometry and Images\gradient.jpg</System.String>
+    </DSCore.File.Filename>
+    <DSCore.File.FileObject guid="325f5575-24a9-46da-b57b-27918f1e7dd3" type="DSCore.File.FileObject" nickname="File.FromPath" x="921.606991798734" y="1104.05868752623" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.DSFunction guid="d78670f7-6782-4b01-baf9-907383139eb1" type="Dynamo.Nodes.DSFunction" nickname="Image.Pixels" x="1366.7035258926" y="1115.94719512891" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.IO.Image.Pixels@var,int,int" />
+    <Dynamo.Nodes.DSFunction guid="ac5a4670-1183-4b15-ad28-0290761ea6e8" type="Dynamo.Nodes.DSFunction" nickname="Color.Brightness" x="1571.34623007685" y="1116.15814313285" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.Color.Brightness@DSCore.Color" />
+    <Dynamo.Nodes.DSFunction guid="ec222638-4d65-49ca-96a3-f885edab0d1e" type="Dynamo.Nodes.DSFunction" nickname="Math.RemapRange" x="2253.39320112706" y="1323.33551413894" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.Math.RemapRange@double[],double,double">
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="e2c60872-11f2-481b-9158-149a6d92be8c" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="2135.29660648434" y="1380.03868260332" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="0.1;&#xA;0.5;" ShouldFocus="false" />
+    <DSCoreNodesUI.Input.IntegerSlider guid="67d966d6-c49c-4e68-95ea-30624a789ec6" type="DSCoreNodesUI.Input.IntegerSlider" nickname="x samples" x="519.548952368504" y="1351.90073712328" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Int32>20</System.Int32>
+      <Range min="1" max="40" step="1" />
+    </DSCoreNodesUI.Input.IntegerSlider>
+    <DSCoreNodesUI.Input.IntegerSlider guid="9f4ddda4-97d2-451f-8968-4b3cd83da6c8" type="DSCoreNodesUI.Input.IntegerSlider" nickname="y samples" x="518.810413657634" y="1413.44874067665" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Int32>10</System.Int32>
+      <Range min="1" max="40" step="1" />
+    </DSCoreNodesUI.Input.IntegerSlider>
+    <Dynamo.Nodes.DSFunction guid="73a43a11-a2c9-4eae-923e-efc365bf0af0" type="Dynamo.Nodes.DSFunction" nickname="Surface.PointAtParameter" x="1515.55287022369" y="1422.78113731615" isVisible="false" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.DSFunction guid="cd617c82-cd70-4db3-8628-591949883aeb" type="Dynamo.Nodes.DSFunction" nickname="Surface.NormalAtParameter" x="1509.16128837548" y="1748.72110902411" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.NormalAtParameter@double,double">
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="2715de48-bebf-419c-a02f-35cb20aa9488" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="12.4981735407269" y="1561.9599530152" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="// Find the midpoints of 'num' divisions of a range&#xA;//&#xA;// For dividing a domain into 3 parts (num=3),&#xA;// as with the top row, this definition returns&#xA;// the midpoints of those blocks, as on the bottom:&#xA;//&#xA;//   [0]........[1/3].......[2/3]........[1]&#xA;//    |..(0.125)..|...(0.5)...|..(0.875)..|&#xA;&#xA;def SeriesAtHalfCells(num)&#xA;{&#xA;halfInc = (1/(2*(num+1)));&#xA;return = halfInc..(1-halfInc)..#num;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Nodes.CodeBlockNodeModel guid="2748267b-d4c7-4464-99bb-567353d86ced" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="1099.0742627524" y="1652.77810043216" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="SeriesAtHalfCells(numX);&#xA;SeriesAtHalfCells(numY);" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" type="Dynamo.Nodes.DSFunction" nickname="Surface.TangentAtUParameter" x="1506.06315033969" y="1587.97277632042" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.TangentAtUParameter@double,double">
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.DSFunction guid="27b477b8-0147-40df-8f39-5851120e2881" type="Dynamo.Nodes.DSFunction" nickname="Circle.ByPlaneRadius" x="2469.69386404599" y="1440.91822007007" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Circle.ByPlaneRadius@Autodesk.DesignScript.Geometry.Plane,double">
+      <PortInfo index="1" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.DSFunction guid="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" type="Dynamo.Nodes.DSFunction" nickname="Plane.ByOriginNormalXAxis" x="1811.94647690939" y="1568.90977807012" isVisible="false" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Plane.ByOriginNormalXAxis@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,Autodesk.DesignScript.Geometry.Vector" />
+    <Dynamo.Nodes.DSFunction guid="aee87c5d-894a-4f62-a1c0-7cbe99c69c1b" type="Dynamo.Nodes.DSFunction" nickname="List.Reverse" x="1717.70857559166" y="1115.41894329793" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.Reverse@var[]..[]" />
+    <Dynamo.Nodes.DSFunction guid="25219e1b-74e8-47d6-a0d7-ef76a8c215fe" type="Dynamo.Nodes.DSFunction" nickname="List.Transpose" x="1868.70012973705" y="1115.41894329793" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.Transpose@var[]..[]" />
+    <Dynamo.Nodes.DSFunction guid="2f4ec4ce-52eb-4fb3-82ad-578a1ceb4a43" type="Dynamo.Nodes.DSFunction" nickname="Geometry.Translate" x="2910.59582453751" y="1631.54618497996" isVisible="false" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Geometry.Translate@Autodesk.DesignScript.Geometry.Vector" />
+    <Dynamo.Nodes.DSFunction guid="493eb570-d75b-4214-9e11-cac8b0c2e9e2" type="Dynamo.Nodes.DSFunction" nickname="Vector.Scale" x="2921.728071072" y="1807.40558123621" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Vector.Scale@double">
+      <PortInfo index="1" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="e5f12ecf-cfd1-489b-aba3-d85d929c375f" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="2795.83814730476" y="1904.76956337054" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="2;" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="fa1de0ab-9cb4-427f-a099-7b95136bb967" type="Dynamo.Nodes.DSFunction" nickname="Vector.Reverse" x="2729.7641380297" y="1784.38772160282" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Vector.Reverse" />
+    <Dynamo.Nodes.DSFunction guid="15cdd045-e5dc-4217-85eb-0c7aac2c7901" type="Dynamo.Nodes.DSFunction" nickname="Curve.ExtrudeAsSolid" x="3210.67004391183" y="1653.43765015143" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Curve.ExtrudeAsSolid@Autodesk.DesignScript.Geometry.Vector" />
+    <Dynamo.Nodes.DSFunction guid="febfc50b-ee33-4fc3-a73d-642901d73fa6" type="Dynamo.Nodes.DSFunction" nickname="Flatten" x="3449.8573428538" y="1658.06060727649" isVisible="false" isUpstreamVisible="true" lacing="Shortest" assembly="" function="Flatten@var[]..[]" />
+    <Dynamo.Nodes.DSFunction guid="0892604a-39a6-40f4-a12b-4043959de522" type="Dynamo.Nodes.DSFunction" nickname="Solid.ByUnion" x="3596.53943328748" y="1658.90848063159" isVisible="false" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Solid.ByUnion@Autodesk.DesignScript.Geometry.Solid[]" />
+    <Dynamo.Nodes.DSFunction guid="d15326de-522b-441f-b85b-90ae2dbb8207" type="Dynamo.Nodes.DSFunction" nickname="Surface.SubtractFrom" x="3805.13131364752" y="1741.75359621573" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.SubtractFrom@Autodesk.DesignScript.Geometry.Solid" />
+    <Dynamo.Nodes.DSFunction guid="88f8982b-c29e-44c5-8f01-c18560ac9eb9" type="Dynamo.Nodes.DSFunction" nickname="ImportInstance.ByGeometries" x="4180.8230341941" y="1741.59769244862" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="RevitNodes.dll" function="Revit.Elements.ImportInstance.ByGeometries@Autodesk.DesignScript.Geometry.Geometry[]" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="6375878c-a49b-4b6d-baac-6cc40eb54b1d" start_index="3" end="cd617c82-cd70-4db3-8628-591949883aeb" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="6375878c-a49b-4b6d-baac-6cc40eb54b1d" start_index="3" end="73a43a11-a2c9-4eae-923e-efc365bf0af0" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="6375878c-a49b-4b6d-baac-6cc40eb54b1d" start_index="3" end="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="6375878c-a49b-4b6d-baac-6cc40eb54b1d" start_index="3" end="d15326de-522b-441f-b85b-90ae2dbb8207" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="13fe5414-d102-477b-bbc4-005092b8223a" start_index="0" end="d78670f7-6782-4b01-baf9-907383139eb1" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="75c2b625-794c-4627-b7a8-55551552392b" start_index="0" end="325f5575-24a9-46da-b57b-27918f1e7dd3" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="325f5575-24a9-46da-b57b-27918f1e7dd3" start_index="0" end="13fe5414-d102-477b-bbc4-005092b8223a" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d78670f7-6782-4b01-baf9-907383139eb1" start_index="0" end="ac5a4670-1183-4b15-ad28-0290761ea6e8" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="ac5a4670-1183-4b15-ad28-0290761ea6e8" start_index="0" end="aee87c5d-894a-4f62-a1c0-7cbe99c69c1b" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="ec222638-4d65-49ca-96a3-f885edab0d1e" start_index="0" end="27b477b8-0147-40df-8f39-5851120e2881" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="e2c60872-11f2-481b-9158-149a6d92be8c" start_index="0" end="ec222638-4d65-49ca-96a3-f885edab0d1e" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="e2c60872-11f2-481b-9158-149a6d92be8c" start_index="1" end="ec222638-4d65-49ca-96a3-f885edab0d1e" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="67d966d6-c49c-4e68-95ea-30624a789ec6" start_index="0" end="d78670f7-6782-4b01-baf9-907383139eb1" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="67d966d6-c49c-4e68-95ea-30624a789ec6" start_index="0" end="2748267b-d4c7-4464-99bb-567353d86ced" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="9f4ddda4-97d2-451f-8968-4b3cd83da6c8" start_index="0" end="d78670f7-6782-4b01-baf9-907383139eb1" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="9f4ddda4-97d2-451f-8968-4b3cd83da6c8" start_index="0" end="2748267b-d4c7-4464-99bb-567353d86ced" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="73a43a11-a2c9-4eae-923e-efc365bf0af0" start_index="0" end="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="cd617c82-cd70-4db3-8628-591949883aeb" start_index="0" end="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="cd617c82-cd70-4db3-8628-591949883aeb" start_index="0" end="2f4ec4ce-52eb-4fb3-82ad-578a1ceb4a43" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="cd617c82-cd70-4db3-8628-591949883aeb" start_index="0" end="fa1de0ab-9cb4-427f-a099-7b95136bb967" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="0" end="73a43a11-a2c9-4eae-923e-efc365bf0af0" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="0" end="cd617c82-cd70-4db3-8628-591949883aeb" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="0" end="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="1" end="73a43a11-a2c9-4eae-923e-efc365bf0af0" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="1" end="cd617c82-cd70-4db3-8628-591949883aeb" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2748267b-d4c7-4464-99bb-567353d86ced" start_index="1" end="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" start_index="0" end="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="27b477b8-0147-40df-8f39-5851120e2881" start_index="0" end="2f4ec4ce-52eb-4fb3-82ad-578a1ceb4a43" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" start_index="0" end="27b477b8-0147-40df-8f39-5851120e2881" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="aee87c5d-894a-4f62-a1c0-7cbe99c69c1b" start_index="0" end="25219e1b-74e8-47d6-a0d7-ef76a8c215fe" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="25219e1b-74e8-47d6-a0d7-ef76a8c215fe" start_index="0" end="ec222638-4d65-49ca-96a3-f885edab0d1e" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2f4ec4ce-52eb-4fb3-82ad-578a1ceb4a43" start_index="0" end="15cdd045-e5dc-4217-85eb-0c7aac2c7901" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="493eb570-d75b-4214-9e11-cac8b0c2e9e2" start_index="0" end="15cdd045-e5dc-4217-85eb-0c7aac2c7901" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="e5f12ecf-cfd1-489b-aba3-d85d929c375f" start_index="0" end="493eb570-d75b-4214-9e11-cac8b0c2e9e2" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="fa1de0ab-9cb4-427f-a099-7b95136bb967" start_index="0" end="493eb570-d75b-4214-9e11-cac8b0c2e9e2" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="15cdd045-e5dc-4217-85eb-0c7aac2c7901" start_index="0" end="febfc50b-ee33-4fc3-a73d-642901d73fa6" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="febfc50b-ee33-4fc3-a73d-642901d73fa6" start_index="0" end="0892604a-39a6-40f4-a12b-4043959de522" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="0892604a-39a6-40f4-a12b-4043959de522" start_index="0" end="d15326de-522b-441f-b85b-90ae2dbb8207" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d15326de-522b-441f-b85b-90ae2dbb8207" start_index="0" end="88f8982b-c29e-44c5-8f01-c18560ac9eb9" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Models.NoteModel guid="df1e6d30-aa5d-43c4-aac6-2071922984b5" text="Tune the radii of the circles." x="2224.19904087034" y="1281.82836111485" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Models.AnnotationModel guid="5cfab499-d863-401b-9e9c-12a6bfc31d46" annotationText="Massage the date to get it into the same format as the the way the surface is parameterized" left="1356.7035258926" top="1033.41894329793" width="652.396603844447" height="226.328251830985" fontSize="30" InitialTop="1115.41894329793" InitialHeight="174.328251830985" TextblockHeight="72" backgrouund="#FFC1D676">
+      <Models ModelGuid="d78670f7-6782-4b01-baf9-907383139eb1" />
+      <Models ModelGuid="ac5a4670-1183-4b15-ad28-0290761ea6e8" />
+      <Models ModelGuid="aee87c5d-894a-4f62-a1c0-7cbe99c69c1b" />
+      <Models ModelGuid="25219e1b-74e8-47d6-a0d7-ef76a8c215fe" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="c7236d53-8891-449e-8619-d853fb1bb78c" annotationText="Find planes parallel to the surface at each pixel point on the surface." left="1089.0742627524" top="1376.78113731615" width="916.872214156986" height="515.73997170796" fontSize="30" InitialTop="1422.78113731615" InitialHeight="499.73997170796" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="73a43a11-a2c9-4eae-923e-efc365bf0af0" />
+      <Models ModelGuid="cd617c82-cd70-4db3-8628-591949883aeb" />
+      <Models ModelGuid="2748267b-d4c7-4464-99bb-567353d86ced" />
+      <Models ModelGuid="a6900f5c-d6c7-4b5d-a0eb-2a50b88b726a" />
+      <Models ModelGuid="5142f363-7ce5-4653-b9ac-6f36b8f33cd6" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="19de4e11-c7ee-47de-b3ec-06a834eef86a" annotationText="Find planar circles representing the holes" left="2125.29660648434" top="1199.82836111485" width="495.997257561653" height="359.28985895522" fontSize="30" InitialTop="1281.82836111485" InitialHeight="307.28985895522" TextblockHeight="72" backgrouund="#FFC1D676">
+      <Models ModelGuid="ec222638-4d65-49ca-96a3-f885edab0d1e" />
+      <Models ModelGuid="e2c60872-11f2-481b-9158-149a6d92be8c" />
+      <Models ModelGuid="27b477b8-0147-40df-8f39-5851120e2881" />
+      <Models ModelGuid="df1e6d30-aa5d-43c4-aac6-2071922984b5" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="829a6360-6b99-4840-8a96-54d60d23fa19" annotationText="Extrude the circles into cylinders which pass through the surface" left="2719.7641380297" top="1549.54618497996" width="648.105905882137" height="447.823378390572" fontSize="30" InitialTop="1631.54618497996" InitialHeight="395.823378390572" TextblockHeight="72" backgrouund="#FFC1D676">
+      <Models ModelGuid="2f4ec4ce-52eb-4fb3-82ad-578a1ceb4a43" />
+      <Models ModelGuid="493eb570-d75b-4214-9e11-cac8b0c2e9e2" />
+      <Models ModelGuid="e5f12ecf-cfd1-489b-aba3-d85d929c375f" />
+      <Models ModelGuid="fa1de0ab-9cb4-427f-a099-7b95136bb967" />
+      <Models ModelGuid="15cdd045-e5dc-4217-85eb-0c7aac2c7901" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="da88e679-65df-4bbf-86b1-848397f9620c" annotationText="Cut the cylinders from the surface" left="3439.8573428538" top="1612.06060727649" width="597.673970793719" height="247.89298893924" fontSize="30" InitialTop="1658.06060727649" InitialHeight="231.89298893924" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="febfc50b-ee33-4fc3-a73d-642901d73fa6" />
+      <Models ModelGuid="0892604a-39a6-40f4-a12b-4043959de522" />
+      <Models ModelGuid="d15326de-522b-441f-b85b-90ae2dbb8207" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="e9444503-e4ba-4673-9307-a2a65ed40f3e" annotationText="Import into Revit" left="4170.8230341941" top="1695.59769244862" width="244.8" height="138.6" fontSize="30" InitialTop="1741.59769244862" InitialHeight="122.6" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="88f8982b-c29e-44c5-8f01-c18560ac9eb9" />
+    </Dynamo.Models.AnnotationModel>
+  </Annotations>
+  <SessionTraceData>
+    <NodeTraceData NodeId="88f8982b-c29e-44c5-8f01-c18560ac9eb9">
+      <CallsiteTraceData>PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDAuOC4xLjE5NDIlMkMlMjBDdWx0dXJlJTNEbmV1dHJhbCUyQyUyMFB1YmxpY0tleVRva2VuJTNEbnVsbCI+DQo8TnVtYmVyT2ZFbGVtZW50cz4xPC9OdW1iZXJPZkVsZW1lbnRzPg0KPEJhc2UtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMF9IYXNEYXRhPg0KPEJhc2UtMF9EYXRhIGlkPSJyZWYtMyI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwVFpYSnBZV3hwZW1GaWJHVkpaQ0JwWkQwaWNtVm1MVEVpSUhodGJHNXpPbUV4UFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwyTnNjaTl1YzJGemMyVnRMMUpsZG1sMFUyVnlkbWxqWlhNdVVHVnljMmx6ZEdWdVkyVXZVbVYyYVhSVFpYSjJhV05sY3lVeVF5VXlNRlpsY25OcGIyNGxNMFF3TGpndU1TNHhPVFF5SlRKREpUSXdRM1ZzZEhWeVpTVXpSRzVsZFhSeVlXd2xNa01sTWpCUWRXSnNhV05MWlhsVWIydGxiaVV6Ukc1MWJHd2lQZzBLUEhOMGNtbHVaMGxFSUdsa1BTSnlaV1l0TXlJK056TTJNekkxTURJdE9UUTRNUzAwWVRFMUxXRXdNRFF0TUdOalpqQXdNRFkwTkRjM0xUQXdNREF3T1dJNFBDOXpkSEpwYm1kSlJENE5DanhwYm5SSlJENHlORGc0UEM5cGJuUkpSRDROQ2p3dllURTZVMlZ5YVdGc2FYcGhZbXhsU1dRK0RRbzhMMU5QUVZBdFJVNVdPa0p2WkhrK0RRbzhMMU5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxQZzBLPC9CYXNlLTBfRGF0YT4NCjxCYXNlLTBfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wX0hhc05lc3RlZERhdGE+DQo8L2ExOkNhbGxTaXRlX3gwMDJCX1RyYWNlU2VyaWFsaXNlckhlbHBlcj4NCjwvU09BUC1FTlY6Qm9keT4NCjwvU09BUC1FTlY6RW52ZWxvcGU+DQo=</CallsiteTraceData>
+    </NodeTraceData>
+  </SessionTraceData>
+</Workspace>

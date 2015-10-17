@@ -1,0 +1,28 @@
+<Workspace Version="0.8.1.1942" X="603.64270344192" Y="478.225860833959" zoom="0.846614811770872" Name="Home" RunType="Automatic" RunPeriod="100" HasRunWithoutCrash="False">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Math" resolvedName="DSCore.Math" assemblyName="DSCoreNodes.dll" />
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="79bf8a64-d56e-498b-9544-76fc6a9b3b1c" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-298.866125547845" y="-405.927775805271" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="// Make a surface&#xA;min = -20;&#xA;max = 20;&#xA;&#xA;x = min..max..#9;&#xA;z1 = amplitude * Math.Sin((360/(max-min))*(x+min));&#xA;z2 = amplitude * Math.Sin((360/(max-min))*(x));&#xA;&#xA;pts1 = Point.ByCoordinates(x,min,z1);&#xA;pts2 = Point.ByCoordinates(x,(min + (max-min)/2),z2);&#xA;pts3 = Point.ByCoordinates(x,max,z1);&#xA;&#xA;crvs = NurbsCurve.ByPoints({pts1,pts2,pts3});&#xA;Surface.ByLoft(crvs);" ShouldFocus="false" />
+    <DSCoreNodesUI.Input.DoubleSlider guid="38b088c1-f0f1-4ee9-8937-eea535753934" type="DSCoreNodesUI.Input.DoubleSlider" nickname="Amplitude" x="-671.26017741535" y="-408.215888775029" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Double>6.12</System.Double>
+      <Range min="0" max="10" step="0.01" />
+    </DSCoreNodesUI.Input.DoubleSlider>
+    <Dynamo.Nodes.DSFunction guid="f7f2bbb3-4d53-4473-990b-a9ddf64410e9" type="Dynamo.Nodes.DSFunction" nickname="ImportInstance.ByGeometries" x="348.341449121429" y="-218.198021060488" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="RevitNodes.dll" function="Revit.Elements.ImportInstance.ByGeometries@Autodesk.DesignScript.Geometry.Geometry[]" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="79bf8a64-d56e-498b-9544-76fc6a9b3b1c" start_index="9" end="f7f2bbb3-4d53-4473-990b-a9ddf64410e9" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="38b088c1-f0f1-4ee9-8937-eea535753934" start_index="0" end="79bf8a64-d56e-498b-9544-76fc6a9b3b1c" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+</Workspace>

@@ -1,0 +1,48 @@
+<Workspace Version="0.8.1.1942" X="380.546626412212" Y="-101.854350554411" zoom="0.761843855381981" Name="Home" RunType="Automatic" RunPeriod="100" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Nodes.DSFunction guid="63c494aa-4414-486a-82ba-1a840054c52b" type="Dynamo.Nodes.DSFunction" nickname="Excel.ReadFromFile" x="293.091303144197" y="392.435834863214" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSOffice.dll" function="DSOffice.Excel.ReadFromFile@var,string,bool">
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <DSCore.File.FileObject guid="e17c75e6-dc33-4731-9ee2-640f585347c1" type="DSCore.File.FileObject" nickname="File.FromPath" x="98.4268542799616" y="367.018346772938" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <DSCore.File.Filename guid="eb2a8878-c538-49d6-9c72-6e39f1bfb772" type="DSCore.File.Filename" nickname="File Path" x="-379.364489102098" y="371.99026994947" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.String>C:\Users\mccronc\Desktop\RAW\_03 Working with tabular data\PanelPoints.xlsx</System.String>
+    </DSCore.File.Filename>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="096921a5-26dd-401e-9084-77502bf25b9e" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="121.224776431308" y="469.354890326472" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="&quot;Sheet1&quot;;" ShouldFocus="false" />
+    <DSCore.File.FileObject guid="8b5b0803-f23f-4c3b-a982-a491ea50ca40" type="DSCore.File.FileObject" nickname="File.FromPath" x="107.21974375923" y="725.178191370181" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <DSCore.File.Filename guid="80a9de29-56ff-4750-a026-a94af7eef659" type="DSCore.File.Filename" nickname="File Path" x="-379.807556341571" y="729.928745449157" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.String>C:\Users\mccronc\Desktop\RAW\_03 Working with tabular data\PanelPoints.csv</System.String>
+    </DSCore.File.Filename>
+    <Dynamo.Nodes.DSFunction guid="dbcbdf50-b56f-4b29-a10d-8e50e600da1f" type="Dynamo.Nodes.DSFunction" nickname="CSV.ReadFromFile" x="348.252568294398" y="723.137986620295" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.IO.CSV.ReadFromFile@var" />
+    <Dynamo.Nodes.Watch guid="4a0e6a8e-f75e-4971-99ee-a2d3f81ce85d" type="Dynamo.Nodes.Watch" nickname="Watch" x="631.630147565838" y="278.953708054449" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.Watch guid="4ee1d95f-0633-4ee3-ac40-7468749d4ef8" type="Dynamo.Nodes.Watch" nickname="Watch" x="880.351329156748" y="439.317355252855" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="63c494aa-4414-486a-82ba-1a840054c52b" start_index="0" end="4a0e6a8e-f75e-4971-99ee-a2d3f81ce85d" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="e17c75e6-dc33-4731-9ee2-640f585347c1" start_index="0" end="63c494aa-4414-486a-82ba-1a840054c52b" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="eb2a8878-c538-49d6-9c72-6e39f1bfb772" start_index="0" end="e17c75e6-dc33-4731-9ee2-640f585347c1" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="096921a5-26dd-401e-9084-77502bf25b9e" start_index="0" end="63c494aa-4414-486a-82ba-1a840054c52b" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="8b5b0803-f23f-4c3b-a982-a491ea50ca40" start_index="0" end="dbcbdf50-b56f-4b29-a10d-8e50e600da1f" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="80a9de29-56ff-4750-a026-a94af7eef659" start_index="0" end="8b5b0803-f23f-4c3b-a982-a491ea50ca40" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="dbcbdf50-b56f-4b29-a10d-8e50e600da1f" start_index="0" end="4ee1d95f-0633-4ee3-ac40-7468749d4ef8" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Models.NoteModel guid="7fb56a89-af09-4bfd-a7dd-03ed95ee3367" text="Navigate to PanelPoints.xlsx (if you have Excel installed) in your sample files." x="-379.667639352771" y="310.399534710516" />
+    <Dynamo.Models.NoteModel guid="104369df-e9a4-4097-885c-3935e8ca4642" text="The method to read data from a csv file is similar.  Navigate to PanelPoints.csv" x="-378.786229815725" y="675.159084941257" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Models.AnnotationModel guid="7fc10e1a-2338-45b5-8c3a-14321575bbce" annotationText="Excel" left="-389.667639352771" top="277.999534710516" width="876.758942496968" height="283.955355615956" fontSize="14" InitialTop="310.399534710516" InitialHeight="281.555355615956" TextblockHeight="22.4" backgrouund="#FF48B9FF">
+      <Models ModelGuid="63c494aa-4414-486a-82ba-1a840054c52b" />
+      <Models ModelGuid="e17c75e6-dc33-4731-9ee2-640f585347c1" />
+      <Models ModelGuid="eb2a8878-c538-49d6-9c72-6e39f1bfb772" />
+      <Models ModelGuid="096921a5-26dd-401e-9084-77502bf25b9e" />
+      <Models ModelGuid="7fb56a89-af09-4bfd-a7dd-03ed95ee3367" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="51f0acda-272f-4e8e-afcf-3a2d725fa3c1" annotationText="CSV" left="-389.807556341571" top="645.159084941257" width="871.260124635969" height="179.7696605079" fontSize="14" InitialTop="675.159084941257" InitialHeight="163.464037561031" TextblockHeight="20" backgrouund="#FF48B9FF">
+      <Models ModelGuid="8b5b0803-f23f-4c3b-a982-a491ea50ca40" />
+      <Models ModelGuid="80a9de29-56ff-4750-a026-a94af7eef659" />
+      <Models ModelGuid="dbcbdf50-b56f-4b29-a10d-8e50e600da1f" />
+      <Models ModelGuid="104369df-e9a4-4097-885c-3935e8ca4642" />
+    </Dynamo.Models.AnnotationModel>
+  </Annotations>
+</Workspace>

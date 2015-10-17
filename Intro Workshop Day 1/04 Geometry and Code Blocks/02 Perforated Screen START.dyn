@@ -1,0 +1,23 @@
+<Workspace Version="0.8.1.1942" X="-366.284154599202" Y="-1311.93242351737" zoom="0.872453974167663" Name="Home" RunType="Manual" RunPeriod="100" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Line" resolvedName="Autodesk.DesignScript.Geometry.Line" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.NurbsCurve" resolvedName="Autodesk.DesignScript.Geometry.NurbsCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Line" resolvedName="Autodesk.DesignScript.Geometry.Line" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Line" resolvedName="Autodesk.DesignScript.Geometry.Line" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Autodesk.DesignScript.Geometry.Surface" resolvedName="Autodesk.DesignScript.Geometry.Surface" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="6375878c-a49b-4b6d-baac-6cc40eb54b1d" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="509.019953215984" y="1561.01301614876" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="// Bottom curve&#xA;pts = {Autodesk.Point.ByCoordinates(0,0,0),&#xA;Autodesk.Point.ByCoordinates(7,2,0),&#xA;Autodesk.Point.ByCoordinates(20,-2,0)};&#xA;&#xA;bottom = Autodesk.NurbsCurve.ByPoints(pts);&#xA;&#xA;// Top curve&#xA;top = Autodesk.Line.ByStartPointEndPoint(&#xA;Autodesk.Point.ByCoordinates(0,0,12),&#xA;Autodesk.Point.ByCoordinates(20,0,12));&#xA;&#xA;// Surface&#xA;Autodesk.Surface.ByLoft({bottom,top});" ShouldFocus="false" />
+    <Dynamo.Nodes.CodeBlockNodeModel guid="2715de48-bebf-419c-a02f-35cb20aa9488" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="512.528604375529" y="1914.6726365219" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="// Find the midpoints of 'num' divisions of a range&#xA;//&#xA;// For dividing a domain into 3 parts (num=3),&#xA;// as with the top row, this definition returns&#xA;// the midpoints of those blocks, as on the bottom:&#xA;//&#xA;//   [0]........[1/3].......[2/3]........[1]&#xA;//    |..(0.125)..|...(0.5)...|..(0.875)..|&#xA;&#xA;def SeriesAtHalfCells(num)&#xA;{&#xA;halfInc = (1/(2*(num+1)));&#xA;return = halfInc..(1-halfInc)..#num;&#xA;};" ShouldFocus="false" />
+  </Elements>
+  <Connectors />
+  <Notes />
+  <Annotations />
+</Workspace>

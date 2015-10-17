@@ -1,0 +1,122 @@
+<Workspace Version="0.8.1.1942" X="-428.366887091514" Y="470.487217589134" zoom="0.224907693816076" Name="Home" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Math" resolvedName="DSCore.Math" assemblyName="DSCoreNodes.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="8f3fc19d-fac2-40e8-bb31-96df6bb66ea8" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="3836.70883883001" y="1375.50926873452" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="x = 2..5;&#xA;1..x;" ShouldFocus="false" />
+    <Dynamo.Nodes.Watch guid="1008ff57-34c7-4e65-b800-32622e9915fc" type="Dynamo.Nodes.Watch" nickname="Watch" x="3998.58778913156" y="1375.33310700235" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.DSFunction guid="d6719856-2a6b-4f00-b33f-822f397520d0" type="Dynamo.Nodes.DSFunction" nickname="List.Count" x="4554.99245656024" y="1284.65057641339" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.Count@var[]..[]" />
+    <Dynamo.Nodes.DSFunction guid="d04e0b7b-4231-4774-b7ff-eb96c81cd684" type="Dynamo.Nodes.DSFunction" nickname="List.Count" x="4439.11764803013" y="1633.23447427524" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.Count@var[]..[]" />
+    <DSCore.Map guid="20206762-ad88-41ad-bbc5-7335d27c1787" type="DSCore.Map" nickname="List.Map" x="4580.75769836581" y="1563.6385647342" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.Watch guid="9d31fb60-3cba-4c41-b5a1-daa3e4de99f1" type="Dynamo.Nodes.Watch" nickname="Watch" x="4933.99777235063" y="1286.39794076095" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.Watch guid="b5568fe9-301e-4e9a-bb6c-9abcce2421f7" type="Dynamo.Nodes.Watch" nickname="Watch" x="4933.04192612379" y="1565.13829622924" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.DSFunction guid="a50f716f-4c49-44b1-8246-4b331a57bc4c" type="Dynamo.Nodes.DSFunction" nickname="Point.ByCoordinates" x="3960.50154715804" y="-1346.10243380434" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double">
+      <PortInfo index="0" default="True" />
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="d091fcd0-5a5b-4786-a22c-f440029aac4f" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="3788.35833759609" y="-1336.73005520243" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="-25..#3..5;&#xA;0..#5..5;" ShouldFocus="false" />
+    <Dynamo.Nodes.Watch guid="72b8d9fc-9d35-4c3b-8535-e67be87b67b2" type="Dynamo.Nodes.Watch" nickname="Watch" x="4155.77270023436" y="-1345.23313744871" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.DSFunction guid="ff1f13c8-4cfb-4106-849a-591615969e42" type="Dynamo.Nodes.DSFunction" nickname="Point.ByCoordinates" x="3956.47107904597" y="-488.92478904772" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double">
+      <PortInfo index="0" default="True" />
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="cad02ce6-85f6-4740-b64b-e408192a4fb4" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="3789.59553730274" y="-479.55241044581" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="0..#3..5;&#xA;0..#5..5;" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="9c3f559c-463d-484c-8808-dd5abeb5bcbe" type="Dynamo.Nodes.DSFunction" nickname="PolyCurve.ByPoints" x="4538.22182268685" y="-249.799686100769" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.PolyCurve.ByPoints@Autodesk.DesignScript.Geometry.Point[],bool">
+      <PortInfo index="1" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.DSFunction guid="a1f1d687-d3b8-4ab7-86fb-252c67f76206" type="Dynamo.Nodes.DSFunction" nickname="PolyCurve.ByPoints" x="4539.46833491099" y="-617.052821829685" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.PolyCurve.ByPoints@Autodesk.DesignScript.Geometry.Point[],bool">
+      <PortInfo index="1" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.DSFunction guid="5f2f7cc0-de49-4dfe-8bdd-6a6479fde60b" type="Dynamo.Nodes.DSFunction" nickname="List.Transpose" x="4254.10371652206" y="-247.844615717994" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.Transpose@var[]..[]" />
+    <Dynamo.Nodes.DSFunction guid="1e7b56cd-67ff-4e25-95fa-202b33076c2a" type="Dynamo.Nodes.DSFunction" nickname="Point.ByCoordinates" x="4004.81349111347" y="480.181762280606" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double">
+      <PortInfo index="0" default="True" />
+      <PortInfo index="1" default="True" />
+      <PortInfo index="2" default="True" />
+    </Dynamo.Nodes.DSFunction>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="2ef9e544-fdd1-4f96-97b5-1676c60c5810" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="3837.93794937024" y="489.554140882516" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="25..#3..5;&#xA;0..#5..5;" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="c5b9929b-98ec-4c27-a72c-e12bd395da39" type="Dynamo.Nodes.DSFunction" nickname="List.GetItemAtIndex" x="4398.53805432967" y="366.919261738901" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.GetItemAtIndex@var[]..[],int" />
+    <Dynamo.Nodes.CodeBlockNodeModel guid="a2cd6572-d2e0-4317-a3ed-6e5686e4ba90" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="4287.95416624559" y="429.258257247575" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="2;" ShouldFocus="false" />
+    <Dynamo.Nodes.Function guid="129e3f8b-c699-45b9-a703-5eb09a0e95f1" type="Dynamo.Nodes.Function" nickname="Pentagram" x="4917.54826749752" y="606.716412964992" isVisible="true" isUpstreamVisible="true" lacing="Shortest">
+      <PortInfo index="1" default="True" />
+      <ID value="a5429857-6217-41d8-b77f-1c90f4cdf8dd" />
+      <Name value="Pentagram" />
+      <Description value="Closed polycurve in the shape of a 5-pointed star." />
+      <Inputs>
+        <Input value="centerPoint" />
+        <Input value="radius" />
+      </Inputs>
+      <Outputs>
+        <Output value="star" />
+      </Outputs>
+    </Dynamo.Nodes.Function>
+    <Dynamo.Nodes.DSFunction guid="3d677712-ef7a-4c72-86a3-dafd9151d42a" type="Dynamo.Nodes.DSFunction" nickname="List.GetItemAtIndex" x="4396.29448772013" y="647.551076175326" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="DSCoreNodes.dll" function="DSCore.List.GetItemAtIndex@var[]..[],int" />
+    <Dynamo.Nodes.CodeBlockNodeModel guid="25842732-1458-4183-9274-cb50da9c5c22" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="4285.71059963605" y="709.890071684001" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="2;" ShouldFocus="false" />
+    <DSCore.Map guid="af6cdd48-6c4d-4868-ac7d-cc1ae69a68bc" type="DSCore.Map" nickname="List.Map" x="4595.12881203787" y="606.04902543693" isVisible="true" isUpstreamVisible="true" lacing="Disabled" />
+    <Dynamo.Nodes.DSFunction guid="77be60c4-6994-43b5-b83b-30603ba9c0e3" type="Dynamo.Nodes.DSFunction" nickname="Circle.ByCenterPointRadius" x="4913.05278165354" y="362.617851907227" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double">
+      <PortInfo index="0" default="True" />
+      <PortInfo index="1" default="True" />
+    </Dynamo.Nodes.DSFunction>
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="8f3fc19d-fac2-40e8-bb31-96df6bb66ea8" start_index="1" end="1008ff57-34c7-4e65-b800-32622e9915fc" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="1008ff57-34c7-4e65-b800-32622e9915fc" start_index="0" end="d6719856-2a6b-4f00-b33f-822f397520d0" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="1008ff57-34c7-4e65-b800-32622e9915fc" start_index="0" end="20206762-ad88-41ad-bbc5-7335d27c1787" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d6719856-2a6b-4f00-b33f-822f397520d0" start_index="0" end="9d31fb60-3cba-4c41-b5a1-daa3e4de99f1" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d04e0b7b-4231-4774-b7ff-eb96c81cd684" start_index="0" end="20206762-ad88-41ad-bbc5-7335d27c1787" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="20206762-ad88-41ad-bbc5-7335d27c1787" start_index="0" end="b5568fe9-301e-4e9a-bb6c-9abcce2421f7" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="a50f716f-4c49-44b1-8246-4b331a57bc4c" start_index="0" end="72b8d9fc-9d35-4c3b-8535-e67be87b67b2" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d091fcd0-5a5b-4786-a22c-f440029aac4f" start_index="0" end="a50f716f-4c49-44b1-8246-4b331a57bc4c" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="d091fcd0-5a5b-4786-a22c-f440029aac4f" start_index="1" end="a50f716f-4c49-44b1-8246-4b331a57bc4c" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="ff1f13c8-4cfb-4106-849a-591615969e42" start_index="0" end="a1f1d687-d3b8-4ab7-86fb-252c67f76206" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="ff1f13c8-4cfb-4106-849a-591615969e42" start_index="0" end="5f2f7cc0-de49-4dfe-8bdd-6a6479fde60b" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="cad02ce6-85f6-4740-b64b-e408192a4fb4" start_index="0" end="ff1f13c8-4cfb-4106-849a-591615969e42" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="cad02ce6-85f6-4740-b64b-e408192a4fb4" start_index="1" end="ff1f13c8-4cfb-4106-849a-591615969e42" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="5f2f7cc0-de49-4dfe-8bdd-6a6479fde60b" start_index="0" end="9c3f559c-463d-484c-8808-dd5abeb5bcbe" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="1e7b56cd-67ff-4e25-95fa-202b33076c2a" start_index="0" end="c5b9929b-98ec-4c27-a72c-e12bd395da39" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="1e7b56cd-67ff-4e25-95fa-202b33076c2a" start_index="0" end="af6cdd48-6c4d-4868-ac7d-cc1ae69a68bc" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2ef9e544-fdd1-4f96-97b5-1676c60c5810" start_index="0" end="1e7b56cd-67ff-4e25-95fa-202b33076c2a" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="2ef9e544-fdd1-4f96-97b5-1676c60c5810" start_index="1" end="1e7b56cd-67ff-4e25-95fa-202b33076c2a" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="c5b9929b-98ec-4c27-a72c-e12bd395da39" start_index="0" end="77be60c4-6994-43b5-b83b-30603ba9c0e3" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="a2cd6572-d2e0-4317-a3ed-6e5686e4ba90" start_index="0" end="c5b9929b-98ec-4c27-a72c-e12bd395da39" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="3d677712-ef7a-4c72-86a3-dafd9151d42a" start_index="0" end="af6cdd48-6c4d-4868-ac7d-cc1ae69a68bc" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="25842732-1458-4183-9274-cb50da9c5c22" start_index="0" end="3d677712-ef7a-4c72-86a3-dafd9151d42a" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="af6cdd48-6c4d-4868-ac7d-cc1ae69a68bc" start_index="0" end="129e3f8b-c699-45b9-a703-5eb09a0e95f1" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Models.NoteModel guid="89e51132-9985-40db-928e-9f27ea01c1ae" text="Without mapping, List.Count (and every other node) will act on the outer-most level of the list.  The first level of the list contains 5 elements (each of which is actually also a list)." x="4459.18012223796" y="1154.52459481486" />
+    <Dynamo.Models.NoteModel guid="b4cc875a-91f6-4efd-895e-f37f2b841abc" text="When you map List.Count, you act one level down in the list.  You do &quot;THIS to EACH OF these things...&quot;&#xD;&#xA;&#xD;&#xA;Now List.Count reports the number of items in each of the lists located at one level down." x="4478.02878741598" y="1428.85872554645" />
+    <Dynamo.Models.NoteModel guid="10f55b3b-53d2-4f63-beda-138fcdd044a1" text="Using cross product lacing creates a grid of points, which appears in written form as a nested list.  Each item of the highest-level list is also a list.&#xD;&#xA;&#xD;&#xA;Think of this as a 2-dimensional array.  You need two pieces of information to find any one item, like an X-coordinate and a Y-coordinate for a point in a grid, or like a pair of indices such as pointList[0][2] to access a single item in this list." x="4151.55672703411" y="-1509.94105102956" />
+    <Dynamo.Models.NoteModel guid="65a3c031-41d3-4d48-b292-690c71eb8efc" text="Transposing the list is equivalent to swapping the row and column of the points in the grid.  This reorganizes your data.  Compare the list structures before and after this node." x="4216.52991046541" y="-342.418144001505" />
+    <Dynamo.Models.NoteModel guid="d8053c9a-7aba-48e2-9620-60d3236fcda4" text="From the Ampersand package." x="4909.36247624518" y="564.373152472191" />
+    <Dynamo.Models.NoteModel guid="f220121f-d5cc-46e6-9f0e-29ac0dbe87e4" text="Horizontal lines" x="4604.16394565707" y="-288.924135621274" />
+    <Dynamo.Models.NoteModel guid="18afe871-e0d6-4f04-bf0d-c44e5481fb41" text="Vertical lines" x="4609.94060076678" y="-652.853407532618" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Models.AnnotationModel guid="3a646405-57de-42c4-b78a-86c1f67f3259" annotationText="Get the item at index 2" left="4277.95416624559" top="336.919261738901" width="271.383888084077" height="184.938995508675" fontSize="14" InitialTop="366.919261738901" InitialHeight="184.938995508675" TextblockHeight="20" backgrouund="#FFC1D676">
+      <Models ModelGuid="c5b9929b-98ec-4c27-a72c-e12bd395da39" />
+      <Models ModelGuid="a2cd6572-d2e0-4317-a3ed-6e5686e4ba90" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="591856d5-15d6-4236-8fa3-3efb3937c5d2" annotationText="Get the item at index 2" left="4275.71059963605" top="617.551076175326" width="271.383888084078" height="184.938995508675" fontSize="14" InitialTop="647.551076175326" InitialHeight="184.938995508675" TextblockHeight="20" backgrouund="#FFC1D676">
+      <Models ModelGuid="3d677712-ef7a-4c72-86a3-dafd9151d42a" />
+      <Models ModelGuid="25842732-1458-4183-9274-cb50da9c5c22" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="3ee63569-e9fb-454e-9f63-49a6b4d58b60" annotationText="... FROM EACH list" left="4585.12881203787" top="576.04902543693" width="153.6" height="148.2" fontSize="14" InitialTop="606.04902543693" InitialHeight="148.2" TextblockHeight="20" backgrouund="#FF48B9FF">
+      <Models ModelGuid="af6cdd48-6c4d-4868-ac7d-cc1ae69a68bc" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="265ffbae-1bf3-470b-a846-f1beec941dd3" annotationText="Transpose" left="4206.52991046541" top="-374.818144001505" width="306.4" height="219.573528283511" fontSize="14" InitialTop="-342.418144001505" InitialHeight="217.173528283511" TextblockHeight="22.4" backgrouund="#FF48B9FF">
+      <Models ModelGuid="5f2f7cc0-de49-4dfe-8bdd-6a6479fde60b" />
+      <Models ModelGuid="65a3c031-41d3-4d48-b292-690c71eb8efc" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="b4856126-c063-47e0-a602-a72ab6bfce89" annotationText="How many items in the list?" left="4544.99245656024" top="1241.05057641339" width="117.6" height="136.2" fontSize="14" InitialTop="1284.65057641339" InitialHeight="122.6" TextblockHeight="33.6" backgrouund="#FFC1D676">
+      <Models ModelGuid="d6719856-2a6b-4f00-b33f-822f397520d0" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="0b553350-53a4-45d2-b87f-8bd9df3e5d88" annotationText="How many items in the list?" left="4429.11764803013" top="1589.63447427524" width="117.6" height="136.2" fontSize="14" InitialTop="1633.23447427524" InitialHeight="122.6" TextblockHeight="33.6" backgrouund="#FFC1D676">
+      <Models ModelGuid="d04e0b7b-4231-4774-b7ff-eb96c81cd684" />
+    </Dynamo.Models.AnnotationModel>
+    <Dynamo.Models.AnnotationModel guid="c48982a4-8092-410c-be5c-c2a8c4fe22b4" annotationText="...in EACH list" left="4570.75769836581" top="1533.6385647342" width="153.6" height="148.2" fontSize="14" InitialTop="1563.6385647342" InitialHeight="148.2" TextblockHeight="20" backgrouund="#FF48B9FF">
+      <Models ModelGuid="20206762-ad88-41ad-bbc5-7335d27c1787" />
+    </Dynamo.Models.AnnotationModel>
+  </Annotations>
+</Workspace>
